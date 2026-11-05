@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://goodwaterforgoodlife.netlify.app/sitemap.xml
