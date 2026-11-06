@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { MapPin, Phone, Navigation, Send, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Navigation, Send, CheckCircle2 } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import WhatsAppIcon from './WhatsAppIcon';
 import { site } from '../config/site';
@@ -82,6 +82,10 @@ export default function Contact() {
                 <span className="flex flex-wrap gap-x-4 gap-y-1">
                   {site.phones.map((p) => <a key={p.e164} href={telLink(p.e164)} className="font-semibold text-navy-900 hover:text-aqua-700">{p.display}</a>)}
                 </span>
+              </div>
+              <div className="mt-3 flex gap-3 text-[15px]">
+                <Mail className="mt-0.5 h-5 w-5 shrink-0 text-aqua-700" aria-hidden />
+                <a href={`mailto:${site.email}`} className="break-all font-semibold text-navy-900 hover:text-aqua-700">{site.email}</a>
               </div>
               <div className="mt-6 grid gap-2.5 sm:grid-cols-2">
                 {site.phones.map((p) => (
