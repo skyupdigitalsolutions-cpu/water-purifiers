@@ -11,12 +11,13 @@ export const site = {
   ],
   // ASSUMPTION: the first number is used for WhatsApp. Change if WhatsApp runs on the other number.
   whatsappNumber: '919880124944',
+  email: 'goodwaterforgoodlife@gmail.com',
   address: {
     line1: '392 C, 80 Feet Road',
     line2: 'Opposite Aditya Royal Apartment, MPM Layout',
-    line3: 'Kengunte, Mallathahalli, Nagarbhavi',   // <-- changed
+    line3: 'Kengunte, Mallathahalli, Nagarbhavi',
     city: 'Bengaluru, Karnataka 560056',
-    full: '392 C, 80 Feet Road, Opposite Aditya Royal Apartment, MPM Layout, Kengunte, Mallathahalli, Nagarbhavi, Bengaluru, Karnataka 560056',   // <-- changed
+    full: '392 C, 80 Feet Road, Opposite Aditya Royal Apartment, MPM Layout, Kengunte, Mallathahalli, Nagarbhavi, Bengaluru, Karnataka 560056',
   },
   // Business-provided claims only. Do not add statistics that are not supplied by the business.
   stats: { years: '20+', customers: '5000+' },
