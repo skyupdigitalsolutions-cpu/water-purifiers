@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Navigation } from 'lucide-react';
+import { MapPin, Phone, Mail, Navigation } from 'lucide-react';
 import Logo from './Logo';
 import WhatsAppIcon from './WhatsAppIcon';
 import { nav, site } from '../config/site';
@@ -44,6 +44,7 @@ export default function Footer() {
               {site.phones.map((p) => (
                 <a key={p.e164} href={telLink(p.e164)} className="flex items-center gap-2.5 hover:text-white"><Phone className="h-4 w-4 text-aqua-400" aria-hidden />{p.display}</a>
               ))}
+              <a href={`mailto:${site.email}`} className="flex items-center gap-2.5 hover:text-white"><Mail className="h-4 w-4 shrink-0 text-aqua-400" aria-hidden /><span className="min-w-0">{site.email.replace('@', '@\u200b')}</span></a>
               <a href={waGeneral()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:text-white"><WhatsAppIcon className="h-4 w-4 text-aqua-400" />WhatsApp us</a>
               <a href={site.directionsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:text-white"><Navigation className="h-4 w-4 text-aqua-400" aria-hidden />Google Maps directions</a>
             </address>
