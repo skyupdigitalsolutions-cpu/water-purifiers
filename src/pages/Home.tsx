@@ -14,6 +14,8 @@ const loaders = {
   Reviews: () => import('../components/Reviews'),
   Contact: () => import('../components/Contact'),
 };
+// Start downloading the section files as soon as the page script runs (they are shown right after the first screen).
+if (typeof window !== 'undefined') Object.values(loaders).forEach((load) => { load(); });
 const About = lazy(loaders.About);
 const Purifiers = lazy(loaders.Purifiers);
 const Softeners = lazy(loaders.Softeners);
@@ -28,11 +30,10 @@ type IdleWindow = Window & { requestIdleCallback?: (cb: () => void, o?: { timeou
 function useAfterFirstPaint() {
   const [ready, setReady] = useState(false);
   useEffect(() => {
-    Object.values(loaders).forEach((load) => { load(); });          // start downloading the chunks right away
     const w = window as IdleWindow;
     const go = () => setReady(true);
     // Any scroll / touch / key press means the visitor is moving down the page: show the sections immediately.
-    const events: (keyof WindowEventMap)[] = ['scroll', 'wheel', 'touchstart', 'keydown'];
+    const events: (keyof WindowEventMap)[] = ['scroll', 'wheel', 'touchstart', 'keydown', 'click', 'hashchange'];
     const onUser = () => go();
     events.forEach((e) => window.addEventListener(e, onUser, { passive: true, once: true }));
     let cancel = () => {};
