@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Phone, ArrowRight, ShieldCheck, Wrench, Star, Droplets } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
 import { site } from '../config/site';
-import { waGeneral, telLink } from '../lib/whatsapp';
+import { telLink } from '../lib/whatsapp';
 
 const slides = [
   { src: '/images/products/kent-sterling-star-blue.webp', name: 'KENT Sterling Star', tag: 'RO + UV + UF · TDS' },
@@ -73,8 +72,7 @@ export default function Hero() {
 
           <div className="hero-in mt-8 grid grid-cols-2 gap-3 [animation-delay:.3s] sm:flex sm:flex-wrap sm:justify-center lg:justify-start">
             <a href={telLink(site.phones[0].e164)} className="btn bg-white text-navy-900 shadow-[0_10px_30px_-10px_rgba(255,255,255,.5)] hover:bg-sky-100"><Phone className="h-4 w-4" />Call Now</a>
-            <a href={waGeneral()} target="_blank" rel="noopener noreferrer" className="btn-wa shadow-[0_10px_30px_-8px_rgba(31,168,85,.7)]"><WhatsAppIcon />WhatsApp</a>
-            <a href="#purifiers" className="btn-light col-span-2 sm:col-span-1">Explore Products<ArrowRight className="h-4 w-4" /></a>
+            <a href="#purifiers" className="btn-light">Explore Products<ArrowRight className="h-4 w-4" /></a>
           </div>
 
           <dl className="hero-in mt-10 grid grid-cols-3 gap-2 rounded-2xl border border-white/10 bg-white/[.05] p-4 [animation-delay:.4s] sm:gap-4 sm:p-5 lg:max-w-xl">
