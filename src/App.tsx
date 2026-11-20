@@ -6,6 +6,7 @@ import FloatingActions from './components/FloatingActions';
 import ScrollPopups from './components/ScrollPopups';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import NotFound from './pages/NotFound';
 import { trackLandingClicks } from './lib/sheet';
 
 function ScrollManager() {
@@ -33,7 +34,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
