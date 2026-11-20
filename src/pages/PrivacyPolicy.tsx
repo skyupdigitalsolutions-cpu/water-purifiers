@@ -2,7 +2,15 @@ import { useEffect } from 'react';
 import { site } from '../config/site';
 
 export default function PrivacyPolicy() {
-  useEffect(() => { document.title = `Privacy Policy | ${site.name}`; }, []);
+  useEffect(() => {
+    document.title = `Privacy Policy | ${site.name}`;
+    const link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const previous = link?.getAttribute('href');
+    link?.setAttribute('href', 'https://goodwaterforgoodlife.com/privacy-policy');
+    return () => {
+      if (link && previous) link.setAttribute('href', previous);
+    };
+  }, []);
   return (
     <article className="container-site max-w-3xl py-16 sm:py-24">
       <p className="eyebrow">Legal</p>
